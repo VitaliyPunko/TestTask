@@ -5,7 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
 
-    <groupId>groupId</groupId>
+    <modules>
+        <module>api-module</module>
+        <module>crud-module</module>
+    </modules>
+
+    <groupId>com.example</groupId>
     <artifactId>TestTask</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -17,6 +22,16 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>api-module</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>crud-module</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -45,7 +60,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <!--				<version>2.4.5</version>-->
+                <version>2.4.5</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
