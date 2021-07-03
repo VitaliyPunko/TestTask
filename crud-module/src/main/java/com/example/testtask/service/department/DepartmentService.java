@@ -1,10 +1,10 @@
-package com.example.testtask.dao.department;
+package com.example.testtask.service.department;
 
 import entity.DepartmentEntity;
 
 import java.util.List;
 
-public interface DepartmentDao {
+public interface DepartmentService {
 
     List<DepartmentEntity> findAll();
 
@@ -15,5 +15,4 @@ public interface DepartmentDao {
     Integer update(DepartmentEntity department);
 
     Integer delete(Integer id);
-
 }

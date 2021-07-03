@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS departments;
 CREATE TABLE departments
 (
     id              Integer Primary key AUTO_INCREMENT,
-    department_name Varchar(50) NOT NULL
+    department_name Varchar(50) NOT NULL UNIQUE
 );
 
 CREATE TABLE workers
