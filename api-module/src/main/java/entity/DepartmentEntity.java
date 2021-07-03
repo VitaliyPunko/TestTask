@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.Objects;
+
 public class DepartmentEntity {
 
     private Integer id;
@@ -26,5 +28,18 @@ public class DepartmentEntity {
 
     public void setDepartmentName(String departmentName) {
         this.departmentName = departmentName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DepartmentEntity that = (DepartmentEntity) o;
+        return Objects.equals(id, that.id) && Objects.equals(departmentName, that.departmentName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, departmentName);
     }
 }
