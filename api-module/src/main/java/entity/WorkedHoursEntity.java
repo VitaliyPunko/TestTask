@@ -1,15 +1,20 @@
 package entity;
 
-import javax.persistence.*;
 
-@Entity
-@Table(name = "worked_hours")
 public class WorkedHoursEntity {
+
     private Integer id;
     private Integer workerHours;
+    private Integer workerId;
 
-    @Id
-    @Column(name = "id", nullable = false)
+    public WorkedHoursEntity() {
+    }
+
+    public WorkedHoursEntity(Integer workerHours, Integer workerId) {
+        this.workerHours = workerHours;
+        this.workerId = workerId;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -18,8 +23,6 @@ public class WorkedHoursEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "Worker_hours", nullable = true)
     public Integer getWorkerHours() {
         return workerHours;
     }
@@ -28,23 +31,11 @@ public class WorkedHoursEntity {
         this.workerHours = workerHours;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        WorkedHoursEntity that = (WorkedHoursEntity) o;
-
-        if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (workerHours != null ? !workerHours.equals(that.workerHours) : that.workerHours != null) return false;
-
-        return true;
+    public Integer getWorkerId() {
+        return workerId;
     }
 
-    @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (workerHours != null ? workerHours.hashCode() : 0);
-        return result;
+    public void setWorkerId(Integer workerId) {
+        this.workerId = workerId;
     }
 }
