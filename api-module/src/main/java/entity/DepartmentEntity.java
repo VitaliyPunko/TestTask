@@ -1,8 +1,9 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class DepartmentEntity {
+public class DepartmentEntity implements Serializable {
 
     private Integer id;
     private String departmentName;
@@ -41,5 +42,13 @@ public class DepartmentEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, departmentName);
+    }
+
+    @Override
+    public String toString() {
+        return "DepartmentEntity{" +
+                "id=" + id +
+                ", departmentName='" + departmentName + '\'' +
+                '}';
     }
 }

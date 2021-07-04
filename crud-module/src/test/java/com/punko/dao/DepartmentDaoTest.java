@@ -1,8 +1,8 @@
 package com.punko.dao;
 
 import com.example.testtask.TestTaskApplication;
-import com.example.testtask.dao.department.DepartmentDao;
-import com.example.testtask.dao.department.DepartmentDaoImpl;
+import com.example.testtask.dao.CommonDao;
+import com.example.testtask.dao.DepartmentDaoImpl;
 import entity.DepartmentEntity;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -27,7 +27,7 @@ public class DepartmentDaoTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(DepartmentDaoTest.class);
 
     @Autowired
-    private DepartmentDao departmentDao;
+    private CommonDao<DepartmentEntity> departmentDao;
 
     @Test
     public void findAllTest() {
@@ -54,7 +54,7 @@ public class DepartmentDaoTest {
     public void findByIdExceptionTest() {
         LOGGER.debug("should find exception by id()");
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            departmentDao.findById(999);
+            departmentDao.findById(999999);
         });
     }
 
@@ -62,11 +62,10 @@ public class DepartmentDaoTest {
     public void createTest() {
         LOGGER.debug("should create department()");
         List<DepartmentEntity> departmentList = departmentDao.findAll();
-        Integer countBeforeCreate = departmentList.size();
         departmentDao.create(new DepartmentEntity("newSomeDep"));
+
         List<DepartmentEntity> departmentListAfterCreate = departmentDao.findAll();
-        Integer countAfterCreate = departmentListAfterCreate.size();
-        Assertions.assertEquals(countBeforeCreate + 1, countAfterCreate);
+        Assertions.assertEquals(departmentList.size() + 1, departmentListAfterCreate.size());
     }
 
     @Test
@@ -92,10 +91,8 @@ public class DepartmentDaoTest {
         Assertions.assertNotNull(departmentList);
         Assertions.assertTrue(departmentList.size() > 0);
 
-        Integer countBeforeDelete = departmentList.size();
         departmentDao.delete(departmentList.get(0).getId());
         List<DepartmentEntity> departmentListAfterCreate = departmentDao.findAll();
-        Integer countAfterDelete = departmentListAfterCreate.size();
-        Assertions.assertEquals(countBeforeDelete, countAfterDelete + 1);
+        Assertions.assertEquals(departmentList.size(), departmentListAfterCreate.size() + 1);
     }
 }

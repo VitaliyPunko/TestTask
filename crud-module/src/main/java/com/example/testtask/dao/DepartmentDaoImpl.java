@@ -1,4 +1,4 @@
-package com.example.testtask.dao.department;
+package com.example.testtask.dao;
 
 import entity.DepartmentEntity;
 import org.slf4j.Logger;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class DepartmentDaoImpl implements DepartmentDao {
+public class DepartmentDaoImpl implements CommonDao<DepartmentEntity> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DepartmentDaoImpl.class);
 
