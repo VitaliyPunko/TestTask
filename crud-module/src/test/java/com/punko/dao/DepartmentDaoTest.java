@@ -1,7 +1,7 @@
 package com.punko.dao;
 
 import com.example.testtask.TestTaskApplication;
-import com.example.testtask.dao.department.DepartmentDao;
+import com.example.testtask.dao.DepartmentDao;
 import com.example.testtask.dao.department.DepartmentDaoImpl;
 import entity.DepartmentEntity;
 import org.junit.jupiter.api.Assertions;

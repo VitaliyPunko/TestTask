@@ -1,4 +1,4 @@
-package com.example.testtask.dao.department;
+package com.example.testtask.dao;
 
 import entity.DepartmentEntity;
 

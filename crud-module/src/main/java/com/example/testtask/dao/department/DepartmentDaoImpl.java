@@ -1,5 +1,6 @@
 package com.example.testtask.dao.department;
 
+import com.example.testtask.dao.DepartmentDao;
 import entity.DepartmentEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

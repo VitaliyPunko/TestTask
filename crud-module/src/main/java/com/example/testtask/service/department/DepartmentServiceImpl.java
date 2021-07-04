@@ -1,6 +1,6 @@
 package com.example.testtask.service.department;
 
-import com.example.testtask.dao.department.DepartmentDao;
+import com.example.testtask.dao.DepartmentDao;
 import entity.DepartmentEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,9 @@
 package entity;
 
 
-public class WorkedHoursEntity {
+import java.io.Serializable;
+
+public class WorkedHoursEntity implements Serializable {
 
     private Integer id;
     private Integer workerHours;

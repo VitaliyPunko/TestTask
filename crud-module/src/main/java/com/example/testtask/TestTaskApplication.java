@@ -11,7 +11,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import javax.sql.DataSource;
 
 @SpringBootApplication
-@PropertySource({"classpath:department.properties"})
+@PropertySource({"classpath:department.properties", "classpath:worker.properties", "classpath:workedHours.properties"})
 public class TestTaskApplication {
 
     public static void main(String[] args) {

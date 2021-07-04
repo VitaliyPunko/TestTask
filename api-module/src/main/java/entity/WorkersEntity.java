@@ -1,6 +1,8 @@
 package entity;
 
-public class WorkersEntity {
+import java.io.Serializable;
+
+public class WorkersEntity implements Serializable {
 
     private Integer id;
     private String firstName;
