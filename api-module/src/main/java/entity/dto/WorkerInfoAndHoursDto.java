@@ -57,4 +57,15 @@ public class WorkerInfoAndHoursDto {
     public void setWorkerHours(Integer workerHours) {
         this.workerHours = workerHours;
     }
+
+    @Override
+    public String toString() {
+        return "WorkerInfoAndHoursDto{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", workerHours=" + workerHours +
+                '}';
+    }
 }

@@ -60,4 +60,14 @@ public class WorkersAndDepartmentsEntityDto implements Serializable {
         this.departmentName = departmentName;
     }
 
+    @Override
+    public String toString() {
+        return "WorkersAndDepartmentsEntityDto{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", departmentName='" + departmentName + '\'' +
+                '}';
+    }
 }
