@@ -2,6 +2,7 @@ package entity;
 
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class WorkedHoursEntity implements Serializable {
 
@@ -48,5 +49,18 @@ public class WorkedHoursEntity implements Serializable {
                 ", workerHours=" + workerHours +
                 ", workerId=" + workerId +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        WorkedHoursEntity that = (WorkedHoursEntity) o;
+        return Objects.equals(id, that.id) && Objects.equals(workerHours, that.workerHours) && Objects.equals(workerId, that.workerId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, workerHours, workerId);
     }
 }
