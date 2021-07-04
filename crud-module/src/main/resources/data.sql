@@ -61,8 +61,8 @@ VALUES ('Jeff', 'Bezos', 'jeffbezos@test.com', 3);
 
 INSERT INTO worked_hours(Worker_id, Worker_hours)
 VALUES (1, 160);
-INSERT INTO worked_hours(Worker_id, Worker_hours)
-VALUES (2, 165);
+-- INSERT INTO worked_hours(Worker_id, Worker_hours)
+-- VALUES (2, 165);
 INSERT INTO worked_hours(Worker_id, Worker_hours)
 VALUES (3, 155);
 
