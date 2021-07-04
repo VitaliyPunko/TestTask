@@ -1,6 +1,6 @@
-package com.example.testtask.service.department;
+package com.example.testtask.service;
 
-import com.example.testtask.dao.DepartmentDao;
+import com.example.testtask.dao.CommonDao;
 import entity.DepartmentEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,12 +10,12 @@ import java.util.List;
 
 @Service
 @Transactional
-public class DepartmentServiceImpl implements DepartmentService {
+public class DepartmentServiceImpl implements CommonService<DepartmentEntity> {
 
-    private final DepartmentDao departmentDao;
+    private final CommonDao<DepartmentEntity> departmentDao;
 
     @Autowired
-    public DepartmentServiceImpl(DepartmentDao departmentDao) {
+    public DepartmentServiceImpl(CommonDao<DepartmentEntity> departmentDao) {
         this.departmentDao = departmentDao;
     }
 

@@ -1,6 +1,6 @@
 package com.example.testtask.controller;
 
-import com.example.testtask.service.department.DepartmentService;
+import com.example.testtask.service.CommonService;
 import entity.DepartmentEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +17,7 @@ public class DepartmentController {
     private static final Logger LOGGER = LoggerFactory.getLogger(DepartmentController.class);
 
     @Autowired
-    DepartmentService departmentService;
+    CommonService<DepartmentEntity> departmentService;
 
     @GetMapping("/departments")
     public List<DepartmentEntity> findAllDepartments() {

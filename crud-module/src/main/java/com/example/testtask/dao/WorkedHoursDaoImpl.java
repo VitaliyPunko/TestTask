@@ -1,6 +1,5 @@
-package com.example.testtask.dao.worker_hours;
+package com.example.testtask.dao;
 
-import com.example.testtask.dao.CommonDao;
 import entity.WorkedHoursEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

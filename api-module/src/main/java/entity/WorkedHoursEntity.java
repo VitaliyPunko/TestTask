@@ -40,4 +40,13 @@ public class WorkedHoursEntity implements Serializable {
     public void setWorkerId(Integer workerId) {
         this.workerId = workerId;
     }
+
+    @Override
+    public String toString() {
+        return "WorkedHoursEntity{" +
+                "id=" + id +
+                ", workerHours=" + workerHours +
+                ", workerId=" + workerId +
+                '}';
+    }
 }

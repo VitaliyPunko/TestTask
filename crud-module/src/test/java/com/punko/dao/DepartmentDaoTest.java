@@ -1,8 +1,8 @@
 package com.punko.dao;
 
 import com.example.testtask.TestTaskApplication;
-import com.example.testtask.dao.DepartmentDao;
-import com.example.testtask.dao.department.DepartmentDaoImpl;
+import com.example.testtask.dao.CommonDao;
+import com.example.testtask.dao.DepartmentDaoImpl;
 import entity.DepartmentEntity;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -27,7 +27,10 @@ public class DepartmentDaoTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(DepartmentDaoTest.class);
 
     @Autowired
-    private DepartmentDao departmentDao;
+    private CommonDao<DepartmentEntity> departmentDao;
+
+//    @Autowired
+//    private DepartmentDao departmentDao;
 
     @Test
     public void findAllTest() {

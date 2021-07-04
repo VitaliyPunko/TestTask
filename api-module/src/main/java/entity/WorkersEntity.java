@@ -59,4 +59,15 @@ public class WorkersEntity implements Serializable {
     public void setDepartmentId(Integer departmentId) {
         this.departmentId = departmentId;
     }
+
+    @Override
+    public String toString() {
+        return "WorkersEntity{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", departmentId=" + departmentId +
+                '}';
+    }
 }

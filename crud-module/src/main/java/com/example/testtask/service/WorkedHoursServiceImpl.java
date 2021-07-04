@@ -1,7 +1,6 @@
-package com.example.testtask.service.worked_hours;
+package com.example.testtask.service;
 
 import com.example.testtask.dao.CommonDao;
-import com.example.testtask.service.CommonService;
 import entity.WorkedHoursEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,16 +12,16 @@ import java.util.List;
 @Transactional
 public class WorkedHoursServiceImpl implements CommonService<WorkedHoursEntity> {
 
-    CommonDao<WorkedHoursEntity> commonDao;
+    CommonDao<WorkedHoursEntity> workedHoursDao;
 
     @Autowired
-    public WorkedHoursServiceImpl(CommonDao<WorkedHoursEntity> commonDao) {
-        this.commonDao = commonDao;
+    public WorkedHoursServiceImpl(CommonDao<WorkedHoursEntity> workedHoursDao) {
+        this.workedHoursDao = workedHoursDao;
     }
 
     @Override
     public List<WorkedHoursEntity> findAll() {
-        return commonDao.findAll();
+        return workedHoursDao.findAll();
     }
 
     @Override

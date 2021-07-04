@@ -1,6 +1,5 @@
-package com.example.testtask.dao.worker;
+package com.example.testtask.dao;
 
-import com.example.testtask.dao.CommonDao;
 import entity.WorkersEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

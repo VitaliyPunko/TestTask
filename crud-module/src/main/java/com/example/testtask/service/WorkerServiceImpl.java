@@ -1,7 +1,6 @@
-package com.example.testtask.service.worker;
+package com.example.testtask.service;
 
 import com.example.testtask.dao.CommonDao;
-import com.example.testtask.service.CommonService;
 import entity.WorkersEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
