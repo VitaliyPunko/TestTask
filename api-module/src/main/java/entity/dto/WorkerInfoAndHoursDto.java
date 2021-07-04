@@ -1,23 +1,21 @@
 package entity.dto;
 
-import java.io.Serializable;
-
-public class WorkersEntityDto implements Serializable {
+public class WorkerInfoAndHoursDto {
 
     private Integer id;
     private String firstName;
     private String lastName;
     private String email;
-    private String departmentName;
+    private Integer workerHours;
 
-    public WorkersEntityDto() {
+    public WorkerInfoAndHoursDto() {
     }
 
-    public WorkersEntityDto(String firstName, String lastName, String email, String departmentName) {
+    public WorkerInfoAndHoursDto(String firstName, String lastName, String email, Integer workerHours) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.departmentName = departmentName;
+        this.workerHours = workerHours;
     }
 
     public Integer getId() {
@@ -52,12 +50,11 @@ public class WorkersEntityDto implements Serializable {
         this.email = email;
     }
 
-    public String getDepartmentName() {
-        return departmentName;
+    public Integer getWorkerHours() {
+        return workerHours;
     }
 
-    public void setDepartmentName(String departmentName) {
-        this.departmentName = departmentName;
+    public void setWorkerHours(Integer workerHours) {
+        this.workerHours = workerHours;
     }
-
 }

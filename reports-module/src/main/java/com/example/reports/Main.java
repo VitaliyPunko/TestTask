@@ -10,7 +10,8 @@ public class Main {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ReportsConfiguration.class);
 
         WorkerDaoDto workerDaoDto = context.getBean(WorkerDaoDto.class);
-        GeneralReport.writeGeneralReport(workerDaoDto);
+        Reports.writeGeneralReport(workerDaoDto);
+        Reports.writeIndividualReport(workerDaoDto, 2);
 
     }
 }

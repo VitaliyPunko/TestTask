@@ -1,10 +1,13 @@
 package com.example.testtask.dao.dto;
 
-import entity.dto.WorkersEntityDto;
+import entity.dto.WorkerInfoAndHoursDto;
+import entity.dto.WorkersAndDepartmentsEntityDto;
 
 import java.util.List;
 
 public interface WorkerDaoDto {
 
-    List<WorkersEntityDto> findAllWorkersWithDepartmentName();
+    List<WorkersAndDepartmentsEntityDto> findAllWorkersWithDepartmentName();
+
+    WorkerInfoAndHoursDto findWorkerWithHisWorkedHours(Integer id);
 }
