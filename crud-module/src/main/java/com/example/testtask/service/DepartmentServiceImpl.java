@@ -31,10 +31,7 @@ public class DepartmentServiceImpl implements CommonService<DepartmentEntity> {
 
     @Override
     public Integer create(DepartmentEntity department) {
-        if (department.getId() > 0) {
-            return update(department);
-        }
-        return departmentDao.create(department);
+        return department.getId() == null ? departmentDao.create(department) : update(department);
     }
 
     @Override

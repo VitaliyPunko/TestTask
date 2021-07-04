@@ -26,21 +26,21 @@ public class WorkerServiceImpl implements CommonService<WorkersEntity> {
 
     @Override
     public WorkersEntity findById(Integer id) {
-        return null;
+        return workerDao.findById(id);
     }
 
     @Override
-    public Integer create(WorkersEntity entity) {
-        return null;
+    public Integer create(WorkersEntity worker) {
+        return worker.getId() == null ? workerDao.create(worker) : update(worker);
     }
 
     @Override
-    public Integer update(WorkersEntity entity) {
-        return null;
+    public Integer update(WorkersEntity worker) {
+        return workerDao.update(worker);
     }
 
     @Override
     public Integer delete(Integer id) {
-        return null;
+        return workerDao.delete(id);
     }
 }
