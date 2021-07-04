@@ -26,21 +26,22 @@ public class WorkedHoursServiceImpl implements CommonService<WorkedHoursEntity> 
 
     @Override
     public WorkedHoursEntity findById(Integer id) {
-        return null;
+        return workedHoursDao.findById(id);
     }
 
     @Override
-    public Integer create(WorkedHoursEntity entity) {
-        return null;
+    public Integer create(WorkedHoursEntity workedHoursEntity) {
+        return workedHoursEntity.getWorkerId() == null ? workedHoursDao.create(workedHoursEntity)
+                : update(workedHoursEntity);
     }
 
     @Override
-    public Integer update(WorkedHoursEntity entity) {
-        return null;
+    public Integer update(WorkedHoursEntity workedHoursEntity) {
+        return workedHoursDao.update(workedHoursEntity);
     }
 
     @Override
     public Integer delete(Integer id) {
-        return null;
+        return workedHoursDao.delete(id);
     }
 }

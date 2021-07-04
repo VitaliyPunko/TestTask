@@ -69,7 +69,7 @@ public class DepartmentDaoTest {
     }
 
     @Test
-    public void updateApartmentTest() {
+    public void updateDepartmentTest() {
         LOGGER.debug("should update department()");
         List<DepartmentEntity> departmentList = departmentDao.findAll();
         Assertions.assertNotNull(departmentList);

@@ -69,7 +69,7 @@ public class WorkerDaoTest {
     }
 
     @Test
-    public void updateApartmentTest() {
+    public void updateWorkerTest() {
         LOGGER.debug("should update worker()");
         List<WorkersEntity> workerList = workerDao.findAll();
         Assertions.assertNotNull(workerList);
@@ -85,8 +85,8 @@ public class WorkerDaoTest {
     }
 
     @Test
-    public void deleteDepartmentTest() {
-        LOGGER.debug("should delete department()");
+    public void deleteWorkerTest() {
+        LOGGER.debug("should delete worker()");
         List<WorkersEntity> workerList = workerDao.findAll();
         Assertions.assertNotNull(workerList);
         Assertions.assertTrue(workerList.size() > 0);

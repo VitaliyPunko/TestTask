@@ -46,11 +46,11 @@ public class WorkerDaoImpl implements CommonDao<WorkersEntity> {
     @Value("${worker.update}")
     private String updateSQL;
 
-    @Value("${worker.getDepartmentsId}")
-    private String getDepartmentsIdSQL;
-
     @Value("${worker.delete}")
     private String deleteSQL;
+
+    @Value("${worker.getDepartmentsId}")
+    private String getDepartmentsIdSQL;
 
     @Override
     public List<WorkersEntity> findAll() {

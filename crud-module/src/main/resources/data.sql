@@ -19,11 +19,11 @@ CREATE TABLE workers
         ON UPDATE CASCADE
         ON DELETE SET NULL
 );
-
+-- make Worker_id UNIQUE?
 CREATE TABLE worked_hours
 (
     id           Integer Primary key AUTO_INCREMENT,
-    Worker_id    Integer UNIQUE,
+    Worker_id    Integer,
     Worker_hours Integer,
     CONSTRAINT worked_hours_FK FOREIGN KEY (Worker_id) REFERENCES workers (id)
         ON UPDATE CASCADE
