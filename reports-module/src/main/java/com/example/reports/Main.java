@@ -12,17 +12,22 @@ public class Main {
 
         boolean isConsole = false;
         if (args.length > 0) {
-            isConsole = args[0].equals("-c") || args[0].equals("-console");
+            if (args.length == 1) {
+                if (args[0].equals("-c") || args[0].equals("-console")) {
+                    isConsole = true;
+                    Reports.writeIndividualReport(workerDaoDto, true);
+                } else {
+                    int id = Integer.parseInt(args[0]);
+                    Reports.writeIndividualReport(workerDaoDto, id, false);
+                }
+            }
+            if (args.length == 2) {
+                int id = Integer.parseInt(args[1]);
+                isConsole = true;
+                Reports.writeIndividualReport(workerDaoDto, id, true);
+            }
         }
-        if (args[1] != null) {
-            int id = Integer.parseInt(args[1]);
-            Reports.writeIndividualReport(workerDaoDto, id, isConsole);
-        } else {
-            Reports.writeIndividualReport(workerDaoDto, isConsole);
-        }
-
         Reports.writeGeneralReport(workerDaoDto, isConsole);
-
 
     }
 }

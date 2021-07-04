@@ -13,7 +13,8 @@
         </encoder>
     </appender>
 
-    <logger name="com.example.testtask" level="DEBUG">
+    <logger name="com.example.reports" level="DEBUG">
+        <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </logger>
 

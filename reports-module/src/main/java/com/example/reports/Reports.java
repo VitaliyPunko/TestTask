@@ -3,6 +3,8 @@ package com.example.reports;
 import com.example.testtask.dao.dto.WorkerDaoDto;
 import entity.dto.WorkerInfoAndHoursDto;
 import entity.dto.WorkersAndDepartmentsEntityDto;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -10,15 +12,19 @@ import java.util.List;
 
 public class Reports {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(Reports.class);
+
     public static void writeGeneralReport(WorkerDaoDto workerDaoDto, boolean isConsole) {
-        try (FileWriter fileWriter = new FileWriter("General Report.txt", false)) {
-            List<WorkersAndDepartmentsEntityDto> workersDtoList = workerDaoDto.findAllWorkersWithDepartmentName();
-            if (isConsole) {
-                for (WorkersAndDepartmentsEntityDto workers : workersDtoList) {
-                    System.out.println(workers);
-                }
-                return;
+        List<WorkersAndDepartmentsEntityDto> workersDtoList = workerDaoDto.findAllWorkersWithDepartmentName();
+        if (isConsole) {
+            LOGGER.debug("Output workers in console:");
+            for (WorkersAndDepartmentsEntityDto workers : workersDtoList) {
+                System.out.println(workers);
             }
+            return;
+        }
+        try (FileWriter fileWriter = new FileWriter("General Report.txt", false)) {
+            LOGGER.debug("Output workers in General Report.txt file:");
             for (WorkersAndDepartmentsEntityDto workers : workersDtoList) {
                 int id = workers.getId();
                 String firstName = workers.getFirstName();
@@ -28,7 +34,7 @@ public class Reports {
                 fileWriter.write(id + " " + firstName + " " + lastName + " " + email + " " + departmentName + "\n");
             }
         } catch (IOException e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -42,16 +48,18 @@ public class Reports {
     }
 
     private static void fileWriterIndividual(WorkerDaoDto workerDaoDto, boolean isConsole, int id) {
+        WorkerInfoAndHoursDto worker = workerDaoDto.findWorkerWithHisWorkedHours(id);
+        if (isConsole) {
+            LOGGER.debug("Output individualWorkers in console:");
+            System.out.println(worker.toString());
+            return;
+        }
         try (FileWriter fileWriter = new FileWriter("Individual Report [" + id + "].txt", false)) {
-            WorkerInfoAndHoursDto worker = workerDaoDto.findWorkerWithHisWorkedHours(id);
-            if (isConsole) {
-                System.out.println(worker.toString());
-                return;
-            }
+            LOGGER.debug("Output individualWorkers in Individual Report [{}].txt file:", id);
             fileWriter.write(worker.getId() + " " + worker.getFirstName() + " " + worker.getLastName() + " "
                     + worker.getEmail() + " " + worker.getWorkerHours());
         } catch (IOException e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
         }
     }
 }
